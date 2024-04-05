@@ -1,0 +1,11 @@
+.background-container {
+  background-image: url('https://www.redditstatic.com/desktop2x/img/renderTimingPixel.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.main-content {
+  background-color: rgba(255, 255, 255, 0.7); /* Color de fondo para mejorar la legibilidad del contenido */
+  padding: 20px; /* Espacio interno para el contenido */
+}
