@@ -1,6 +1,9 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
+  color: #212529;
+  text-align: center;
+  
 }
 .hero-section {
   height: 100vh;
@@ -33,4 +36,28 @@ body {
   color: white;
   padding: 20px 0;
   text-align: center;
+}
+
+
+#error {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
