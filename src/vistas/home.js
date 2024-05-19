@@ -1,6 +1,6 @@
 export const home= {
     template: 
-    `<body>
+    `
     <!-- Hero Section -->
     <div class="hero-section">
         <div class="hero-overlay"></div>
@@ -43,13 +43,7 @@ export const home= {
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Formula 1. Todos los derechos reservados.</p>
-    </footer>
-
-</body>`,
+`,
 script: ()=>{
     console.log('vista Home cargada')
 }

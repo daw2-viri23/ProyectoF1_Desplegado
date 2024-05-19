@@ -11,7 +11,7 @@ export const pilotos = {
                 <img src="./imagenes/sainz.jpg" class="card-img-top" alt="Carlos Sainz">
                 <div class="card-body">
                     <h5 class="card-title">Carlos Sainz</h5>
-                    <p class="card-text">Texto descriptivo sobre Carlos Sainz.</p>
+                    
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@ export const pilotos = {
                 <img src="./imagenes/leclerc.jpg" class="card-img-top" alt="Charles Leclerc">
                 <div class="card-body">
                     <h5 class="card-title">Charles Leclerc</h5>
-                    <p class="card-text">Texto descriptivo sobre Charles Leclerc.</p>
+                    
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@ export const pilotos = {
                 <img src="./imagenes/verstappen.jpg" class="card-img-top" alt="Max Verstappen">
                 <div class="card-body">
                     <h5 class="card-title">Max Verstappen</h5>
-                    <p class="card-text">Texto descriptivo sobre Max Verstappen.</p>
+                    
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@ export const pilotos = {
                 <img src="./imagenes/checo.jpg" class="card-img-top" alt="Sergio Perez">
                 <div class="card-body">
                     <h5 class="card-title">Sergio Perez</h5>
-                    <p class="card-text">Texto descriptivo sobre Sergio Perez.</p>
+                    
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@ export const pilotos = {
                 <img src="./imagenes/norris.jpg" class="card-img-top" alt="Lando Norris">
                 <div class="card-body">
                     <h5 class="card-title">Lando Norris</h5>
-                    <p class="card-text">Texto descriptivo sobre Lando Norris.</p>
+                    
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@ export const pilotos = {
                 <img src="./imagenes/piastri.jpg" class="card-img-top" alt="Oscar Piastri">
                 <div class="card-body">
                     <h5 class="card-title">Oscar Piastri</h5>
-                    <p class="card-text">Texto descriptivo sobre Oscar Piastri.</p>
+                    
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@ export const pilotos = {
                 <img src="./imagenes/stroll.jpg" class="card-img-top" alt="Lance Stroll">
                 <div class="card-body">
                     <h5 class="card-title">Lance Stroll</h5>
-                    <p class="card-text">Texto descriptivo sobre Lance Stroll.</p>
+                    
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@ export const pilotos = {
                 <img src="./imagenes/nano.jpg" class="card-img-top" alt="Fernando Alonso">
                 <div class="card-body">
                     <h5 class="card-title">Fernando Alonso</h5>
-                    <p class="card-text">Texto descriptivo sobre Fernando Alonso.</p>
+                    
                 </div>
             </div>
         </div>
@@ -101,7 +101,7 @@ export const pilotos = {
                 <img src="./imagenes/yuki.jpg" class="card-img-top" alt="Yuki Tsunoda">
                 <div class="card-body">
                     <h5 class="card-title">Yuki Tsunoda</h5>
-                    <p class="card-text">Texto descriptivo sobre el Yuki Tsunoda.</p>
+                    
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@ export const pilotos = {
                 <img src="./imagenes/daniel.jpg" class="card-img-top" alt="Daniel Ricciardo">
                 <div class="card-body">
                     <h5 class="card-title">Daniel Ricciardo</h5>
-                    <p class="card-text">Texto descriptivo sobre Daniel Ricciardo.</p>
+                    
                 </div>
             </div>
         </div>
@@ -121,7 +121,7 @@ export const pilotos = {
                 <img src="./imagenes/hamilton.jpg" class="card-img-top" alt="Lewis Hamilton">
                 <div class="card-body">
                     <h5 class="card-title">Lewis Hamilton</h5>
-                    <p class="card-text">Texto descriptivo sobre Lewis Hamilton.</p>
+                    
                 </div>
             </div>
         </div>
@@ -131,102 +131,13 @@ export const pilotos = {
                 <img src="./imagenes/russell.jpg" class="card-img-top" alt="George Russell">
                 <div class="card-body">
                     <h5 class="card-title">George Russell</h5>
-                    <p class="card-text">Texto descriptivo sobre George Russell.</p>
+                    
                 </div>
             </div>
         </div>
     </div>
     <!-- Fin de la tercera fila -->
-
-    <!-- Cuarta fila -->
-    <div class="row">
-        <!-- Columna 1 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="./imagenes/bottas.jpeg" class="card-img-top" alt="Valtteri Bottas">
-                <div class="card-body">
-                    <h5 class="card-title">Valtteri Bottas</h5>
-                    <p class="card-text">Texto descriptivo sobre Valtteri Bottas.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Columna 2 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="./imagenes/zhou.jpeg" class="card-img-top" alt="Guanyu Zhou">
-                <div class="card-body">
-                    <h5 class="card-title">Guanyu Zhou</h5>
-                    <p class="card-text">Texto descriptivo sobre Guanyu Zhou.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Columna 3 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="./imagenes/gasly.jpg" class="card-img-top" alt="Pierre Gasly">
-                <div class="card-body">
-                    <h5 class="card-title">Pierre Gasly</h5>
-                    <p class="card-text">Texto descriptivo sobre Pierre Gasly.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Columna 4 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="./imagenes/ocon.jpg" class="card-img-top" alt="Esteban Ocon">
-                <div class="card-body">
-                    <h5 class="card-title">Esteban Ocon</h5>
-                    <p class="card-text">Texto descriptivo sobre Esteban Ocon.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Fin de la cuarta fila -->
-
-    <!-- Quinta fila -->
-    <div class="row">
-        <!-- Columna 1 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="./imagenes/nico.jpeg" class="card-img-top" alt="Nico Hülkenberg">
-                <div class="card-body">
-                    <h5 class="card-title">Nico Hülkenberg</h5>
-                    <p class="card-text">Texto descriptivo sobre Nico Hülkenberg.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Columna 2 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="./imagenes/kevin.jpeg" class="card-img-top" alt="Kevin Magnussen">
-                <div class="card-body">
-                    <h5 class="card-title">Kevin Magnussen</h5>
-                    <p class="card-text">Texto descriptivo sobre Kevin Magnussen.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Columna 3 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="./imagenes/albon.jpg" class="card-img-top" alt="Alex Albon">
-                <div class="card-body">
-                    <h5 class="card-title">Alex Albon</h5>
-                    <p class="card-text">Texto descriptivo sobre Alex Albon.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Columna 4 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="./imagenes/sargeant.jpg" class="card-img-top" alt="Logan Sargent">
-                <div class="card-body">
-                    <h5 class="card-title">Logan Sargent</h5>
-                    <p class="card-text">Texto descriptivo sobre el piloto Logan Sargent.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Fin de la quinta fila -->
+    
 </div>
 
     `,
