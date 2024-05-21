@@ -8,7 +8,7 @@ export default  {
             <!-- Columna 1 -->
             <div class="col-md-6">
                 <div class="card mb-3">
-                    <img src="./imagenes/ferrari.jpg" class="card-img-top" alt="Ferrari">
+                    <img src="../imagenes/ferrari.jpg" class="card-img-top" alt="Ferrari">
                     <div class="card-body">
                         <h5 class="card-title">Ferrari</h5>
                         
@@ -18,7 +18,7 @@ export default  {
             <!-- Columna 2 -->
             <div class="col-md-6">
                 <div class="card mb-3">
-                    <img src="./imagenes/redbull.jpg" class="card-img-top" alt="Red Bull Racing">
+                    <img src="../imagenes/redbull.jpg" class="card-img-top" alt="Red Bull Racing">
                     <div class="card-body">
                         <h5 class="card-title">Red Bull Racing</h5>
                         
@@ -33,7 +33,7 @@ export default  {
             <!-- Columna 1 -->
             <div class="col-md-6">
                 <div class="card mb-3">
-                    <img src="./imagenes/mclaren.jpg" class="card-img-top" alt="McLaren">
+                    <img src="../imagenes/mclaren.jpg" class="card-img-top" alt="McLaren">
                     <div class="card-body">
                         <h5 class="card-title">McLaren</h5>
                         
@@ -43,7 +43,7 @@ export default  {
             <!-- Columna 2 -->
             <div class="col-md-6">
                 <div class="card mb-3">
-                    <img src="./imagenes/astonmartin.jpeg" class="card-img-top" alt="Aston Martin">
+                    <img src="../imagenes/astonmartin.jpeg" class="card-img-top" alt="Aston Martin">
                     <div class="card-body">
                         <h5 class="card-title">Aston Martin</h5>
                         
@@ -58,7 +58,7 @@ export default  {
             <!-- Columna 1 -->
             <div class="col-md-6">
                 <div class="card mb-3">
-                    <img src="./imagenes/visa.jpg" class="card-img-top" alt="Visa">
+                    <img src="../imagenes/visa.jpg" class="card-img-top" alt="Visa">
                     <div class="card-body">
                         <h5 class="card-title">Visa</h5>
                         
@@ -68,7 +68,7 @@ export default  {
             <!-- Columna 2 -->
             <div class="col-md-6">
                 <div class="card mb-3">
-                    <img src="./imagenes/mercedes.jpg" class="card-img-top" alt="Mercedes">
+                    <img src="../imagenes/mercedes.jpg" class="card-img-top" alt="Mercedes">
                     <div class="card-body">
                         <h5 class="card-title">Mercedes</h5>
                         
@@ -83,7 +83,7 @@ export default  {
             <!-- Columna 1 -->
             <div class="col-md-6">
                 <div class="card mb-3">
-                    <img src="./imagenes/stake.jpg" class="card-img-top" alt="Stake">
+                    <img src="../imagenes/stake.jpg" class="card-img-top" alt="Stake">
                     <div class="card-body">
                         <h5 class="card-title">Stake</h5>
                         
@@ -93,7 +93,7 @@ export default  {
             <!-- Columna 2 -->
             <div class="col-md-6">
                 <div class="card mb-3">
-                    <img src="./imagenes/alpine.jpg" class="card-img-top" alt="Alpine">
+                    <img src="../imagenes/alpine.jpg" class="card-img-top" alt="Alpine">
                     <div class="card-body">
                         <h5 class="card-title">Alpine</h5>
                         
@@ -108,7 +108,7 @@ export default  {
             <!-- Columna 1 -->
             <div class="col-md-6">
                 <div class="card mb-3">
-                    <img src="./imagenes/haas.jpg" class="card-img-top" alt="Haas">
+                    <img src="../imagenes/haas.jpg" class="card-img-top" alt="Haas">
                     <div class="card-body">
                         <h5 class="card-title">Haas</h5>
                         
@@ -118,7 +118,7 @@ export default  {
             <!-- Columna 2 -->
             <div class="col-md-6">
                 <div class="card mb-3">
-                    <img src="./imagenes/williams.jpg" class="card-img-top" alt="Williams">
+                    <img src="../imagenes/williams.jpg" class="card-img-top" alt="Williams">
                     <div class="card-body">
                         <h5 class="card-title">Williams</h5>
                         
