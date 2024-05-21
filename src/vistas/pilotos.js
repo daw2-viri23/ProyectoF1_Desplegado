@@ -1,4 +1,4 @@
-export const pilotos = {
+export default  {
     template : `
     <div class="container-fluid mt-5 mb-5 p-3">
     <h1 class="mb-2 mt-4 text-center">Pilotos de Fórmula 1</h1>

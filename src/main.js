@@ -1,16 +1,22 @@
 import { enrutador } from "./componentes/enrutador";
 import { footer } from "./componentes/footer";
 import { header } from "./componentes/header";
-import { escuderias } from "./vistas/escuderias";
-import { home } from "./vistas/home";
-import { pilotos } from "./vistas/pilotos";
 
+document.querySelector('header').innerHTML = header.template;
+header.script();
+document.querySelector('footer').innerHTML = footer.template;
 
-document.querySelector('header').innerHTML = header.template
-header.script()
-document.querySelector('footer').innerHTML = footer.template
+async function cargarVistaInicial() {
+    try {
+        const componente = await import('./vistas/home.js');
+        const vista = componente.default;
+        document.querySelector('main').innerHTML = vista.template;
+        vista.script();
+    } catch (error) {
+        console.error('Error cargando la vista inicial:', error);
+    }
+}
 
-
-enrutador.observadorRutas()
-// Cargamos la página home
-window.location = '#/home'
+cargarVistaInicial();
+enrutador.observadorRutas();
+window.location = '#/home';

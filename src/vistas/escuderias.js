@@ -1,4 +1,4 @@
-export const escuderias = {
+export default  {
     template : `
     <div class="container-fluid mt-5 p-3 mb-5">
         <h1 class="mb-2 mt-4 text-center">Escuderías de Fórmula 1</h1>

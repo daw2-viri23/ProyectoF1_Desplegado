@@ -1,6 +1,5 @@
-export const home= {
-    template: 
-    `
+export default {
+    template: `
     <!-- Hero Section -->
     <div class="hero-section">
         <div class="hero-overlay"></div>
@@ -43,8 +42,8 @@ export const home= {
             </div>
         </div>
     </div>
-`,
-script: ()=>{
-    console.log('vista Home cargada')
-}
-}
+    `,
+    script: () => {
+        console.log('Vista Home cargada');
+    }
+};
