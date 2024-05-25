@@ -23,7 +23,10 @@ export const header = {
                         <a class="nav-link router-link" aria-current="page" href="#/escuderias">Escuderias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link router-link" aria-current="page" href="#/prueba">Prueba</a>
+                        <a class="nav-link router-link" aria-current="page" href="#/circuitos">Circuitos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link router-link" aria-current="page" href="#/clasificacion">Clasificacion</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">

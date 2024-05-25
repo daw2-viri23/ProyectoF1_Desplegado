@@ -1,3 +1,6 @@
+import clasificacion from '../vistas/clasificacion.js';
+
+
 export const enrutador = {
   rutas: {
       home: () => import('../vistas/home.js'),
@@ -5,7 +8,9 @@ export const enrutador = {
       registro: () => import('../vistas/registro.js'),
       escuderias: () => import('../vistas/escuderias.js'),
       pilotos: () => import('../vistas/pilotos.js'),
-      error: () => import('../vistas/error.js')
+      error: () => import('../vistas/error.js'),
+      circuitos: () => import('../vistas/circuitos.js'),
+      clasificacion: () => import ('../vistas/clasificacion.js') 
   },
   
   router: async () => {

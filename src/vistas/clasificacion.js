@@ -1,6 +1,6 @@
-export const clasificacion = {
+export default {
     templates: `
-        
+       
 
     `
     
