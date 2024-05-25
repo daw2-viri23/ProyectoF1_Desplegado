@@ -2,9 +2,9 @@ import { enrutador } from "./enrutador"; // Importa el enrutador
 
 export const header = {
     template: `
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="margin-bottom:1000px">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand router-link" href="#/home">
                 <img src="../imagenes/F1.svg.png" alt="" width="200" height="40" class="d-inline-block align-text-top" />
                 Pagina F1
             </a>
@@ -28,13 +28,13 @@ export const header = {
                 </ul>
                 <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <button id="loginBtn" class="ms-2 btn btn-success">
+                        <button id="loginBtn" class="ms-2 btn btn-success router-link" href="#/login">
                             Iniciar sesión
                             <i class="bi bi-box-arrow-in-right"></i>
                         </button>
                     </li>
                     <li class="nav-item">
-                        <button id="registerBtn" class="ms-2 btn btn-outline-light">
+                        <button id="registerBtn" class="ms-2 btn btn-outline-light router-link" href="#/registro">
                             Regístrate
                             <i class="bi bi-box-arrow-in-right"></i>
                         </button>
@@ -47,17 +47,6 @@ export const header = {
     script: () => {
         console.log('Vista de header cargada con éxito');
 
-        const loginBtn = document.getElementById('loginBtn');
-        const registerBtn = document.getElementById('registerBtn');
-
-        // Evento de clic para el botón de inicio de sesión
-        loginBtn.addEventListener('click', () => {
-            enrutador.router('/login'); // Redirige a la vista de inicio de sesión
-        });
-
-        // Evento de clic para el botón de registro
-        registerBtn.addEventListener('click', () => {
-            enrutador.router('/registro'); // Redirige a la vista de registro
-        });
+        enrutador.observadorRutas(); // Activa el observador de rutas
     }
 };

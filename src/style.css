@@ -3,7 +3,8 @@ body {
   background-color: #f8f9fa;
   color: #212529;
   text-align: center;
-  
+  background-color: #f8f9fa;
+  font-family: 'Roboto', sans-serif;
 }
 .hero-section {
   height: 100vh;
@@ -60,4 +61,60 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.features-section {
+  padding: 60px 0;
+}
+.card-hover:hover {
+  transform: scale(1.05);
+  background-color: #ffa3a3; /* Yellow tone */
+}
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+.card-hover:hover .card-img-top {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.card-body {
+  padding: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.card-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #343a40;
+}
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+}
+.about-us-section {
+  background-color: #343a40;
+  color: #fff;
+  padding: 50px 20px;
+  border-radius: 15px;
+  margin-top: 50px;
+  text-align: center;
+}
+.about-us-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.about-us-section p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
 }
