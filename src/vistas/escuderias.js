@@ -1,10 +1,10 @@
 export default  {
     template : `
     <div class="container-fluid mt-5 p-3 mb-5">
-        <h1 class="mb-2 mt-4 text-center">Escuderías de Fórmula 1</h1>
+        
         
         <!-- Primera fila -->
-        <div class="row">
+        <div class="row mt-5">
             <!-- Columna 1 -->
             <div class="col-md-6">
                 <div class="card mb-3">
