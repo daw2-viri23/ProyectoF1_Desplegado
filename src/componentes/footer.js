@@ -6,7 +6,7 @@ export const footer = {
             <div class="row align-items-center">
                 <div class="col-md-4 text-center text-md-left mb-3 mb-md-0">
                     <a class="navbar-brand fs-6" href="http://www.fpllefia.com">
-                        <img src="../imagenes/F1.svg.png" alt="Logo F1" width="150" height="40" class="d-inline-block align-text-top" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/New_era_F1_logo.png" alt="Logo F1" width="150" height="40" class="d-inline-block align-text-top" />
                     </a>
                 </div>
                 <div class="col-md-4 text-center mb-3 mb-md-0">
