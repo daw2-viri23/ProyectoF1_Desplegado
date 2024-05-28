@@ -10,21 +10,27 @@ export const enrutador = {
     error: () => import('../vistas/error.js'),
     circuitos: () => import('../vistas/circuitos.js'),
     clasificacion: () => import('../vistas/clasificacion.js'),
-    'vista-usuarios': () => import('../vistas/vistaUsuarios.js') // Nueva ruta
+    'vista-usuarios': () => import('../vistas/vistaUsuarios.js'),
+    'editar-piloto': () => import('../vistas/editarPiloto.js') // Nueva ruta agregada
   },
   
   router: async () => {
     const pathCompleto = window.location.hash || '#/home';
-    const path = pathCompleto.split('/')[1] || 'home';
-    const parametro = pathCompleto.split('/')[2];
-    
+    const [path, parametro] = pathCompleto.slice(2).split('/');
+
     console.log('Ruta detectada:', path);
+
+    if (!enrutador.rutas[path]) {
+      console.error(`Ruta no definida: ${path}`);
+      window.location.hash = '#/error';
+      return;
+    }
 
     try {
       const componenteVista = await enrutador.rutas[path]();
       console.log('Vista cargada:', componenteVista);
-      
-      if (componenteVista) {
+
+      if (componenteVista && componenteVista.default) {
         const vista = componenteVista.default;
         console.log('Vista:', vista);
         document.querySelector('main').innerHTML = vista.template;
@@ -32,18 +38,19 @@ export const enrutador = {
           vista.script(parametro);
         }
       } else {
-        window.location = '#/error';
+        console.error(`Componente vista no definido para la ruta: ${path}`);
+        window.location.hash = '#/error';
       }
     } catch (error) {
       console.error('Error cargando la vista:', error);
-      window.location = '#/error';
+      window.location.hash = '#/error';
     }
   },
   
   observadorRutas: () => {
     document.body.addEventListener('click', event => {
-      const link = event.target;
-      if (link.classList.contains('router-link')) {
+      const link = event.target.closest('.router-link');
+      if (link) {
         event.preventDefault();
         const href = link.getAttribute('href');
         window.history.pushState(null, null, href);

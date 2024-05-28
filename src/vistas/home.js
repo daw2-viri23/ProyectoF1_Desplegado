@@ -71,10 +71,11 @@ export default {
         <!-- Card 6: Nueva Card -->
         <div class="col-md-4 text-center animate__animated animate__fadeInUp mb-4">
             <div class="card shadow-sm card-hover">
-                <img src="URL_DE_LA_IMAGEN" alt="Título de la Nueva Card" class="card-img-top">
+                <img src="https://images.daznservices.com/di/library/DAZN_News/d7/b3/gp-bahrein-f1-2020_10ay2rb0s3q401jroq5odskbcy.jpg?t=1567189250" alt="Título de la Nueva Card" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title">Título de la Nueva Card</h5>
-                    <p class="card-text">Contenido de la Nueva Card.</p>
+                    <h5 class="card-title">Accidentes escalofriantes</h5>
+                    <p class="card-text">
+                    "Los accidentes en la Fórmula 1 nos recuerdan que, aunque la velocidad es emocionante, la seguridad siempre debe ser nuestra prioridad número uno."</p>
                 </div>
             </div>
         </div>

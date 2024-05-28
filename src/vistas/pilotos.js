@@ -1,149 +1,79 @@
-export default  {
-    template : `
+import { supabase } from '../componentes/supabase';
+
+export default {
+  template: `
     <div class="container-fluid mt-5 mb-5 p-3">
-    
-    
-    <!-- Primera fila -->
-    <div class="row mt-5">
-        <!-- Columna 1 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/sainz-65cf42b2dd3c6.jpg?crop=1.00xw:0.186xh;0,0.144xh&resize=980:*" class="card-img-top" alt="Carlos Sainz">
-                <div class="card-body">
-                    <h5 class="card-title">Carlos Sainz</h5>
-                    
-                </div>
+      <div id="pilotosContainer" class="row mt-5">
+        <!-- Las cartas de pilotos se generarán aquí -->
+      </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="pilotoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="pilotoModalLabel">Información del Piloto</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-        </div>
-        <!-- Columna 2 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/leclerc2-65cf425e64e3e.jpg?crop=1.00xw:0.178xh;0,0.146xh&resize=980:*" class="card-img-top" alt="Charles Leclerc">
-                <div class="card-body">
-                    <h5 class="card-title">Charles Leclerc</h5>
-                    
-                </div>
+            <div class="modal-body">
+              <img id="pilotoModalImg" src="" class="img-fluid mb-3" alt="Imagen del piloto">
+              <p><strong>Nombre:</strong> <span id="pilotoModalNombre"></span></p>
+              <p><strong>Apellidos:</strong> <span id="pilotoModalApellidos"></span></p>
+              <p><strong>Escuderia:</strong> <span id="pilotoModalEscuderia"></span></p>
+              <p><strong>Puntos:</strong> <span id="pilotoModalPuntos"></span></p>
+              <p><strong>Información:</strong> <span id="pilotoModalInformacion"></span></p>
             </div>
-        </div>
-        <!-- Columna 3 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/max-verstappen-01-65cf38df87c8a.jpg?crop=1.00xw:0.335xh;0,0.0681xh&resize=980:*" class="card-img-top" alt="Max Verstappen">
-                <div class="card-body">
-                    <h5 class="card-title">Max Verstappen</h5>
-                    
-                </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
+          </div>
         </div>
-        <!-- Columna 4 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/sergio-perez-02-65cf395436557.jpg?crop=1.00xw:0.335xh;0,0.0935xh&resize=980:*" class="card-img-top" alt="Sergio Perez">
-                <div class="card-body">
-                    <h5 class="card-title">Sergio Perez</h5>
-                    
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-    <!-- Fin de la primera fila -->
+  `,
+  script: async () => {
+    console.log('Vista pilotos cargada');
 
-    <!-- Segunda fila -->
-    <div class="row">
-        <!-- Columna 1 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/landa-norris-65cf4138b447a.jpg?crop=1.00xw:0.335xh;0,0.110xh&resize=980:*" class="card-img-top" alt="Lando Norris">
-                <div class="card-body">
-                    <h5 class="card-title">Lando Norris</h5>
-                    
-                </div>
-            </div>
-        </div>
-        <!-- Columna 2 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/oscar-piastri-65cf4102306ec.jpg?crop=1.00xw:0.335xh;0,0.115xh&resize=980:*" class="card-img-top" alt="Oscar Piastri">
-                <div class="card-body">
-                    <h5 class="card-title">Oscar Piastri</h5>
-                    
-                </div>
-            </div>
-        </div>
-        <!-- Columna 3 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/lance-stroll-2-65cf3c6d769ac.jpg?crop=1.00xw:0.334xh;0,0.156xh&resize=980:*" class="card-img-top" alt="Lance Stroll">
-                <div class="card-body">
-                    <h5 class="card-title">Lance Stroll</h5>
-                    
-                </div>
-            </div>
-        </div>
-        <!-- Columna 4 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/fernando-alonso-3-65cf3c9deea67.jpg?crop=1.00xw:0.334xh;0,0.166xh&resize=980:*" class="card-img-top" alt="Fernando Alonso">
-                <div class="card-body">
-                    <h5 class="card-title">Fernando Alonso</h5>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Fin de la segunda fila -->
+    const pilotosContainer = document.getElementById('pilotosContainer');
 
-    <!-- Tercera fila -->
-    <div class="row">
-        <!-- Columna 1 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/yuki-tsunoda-65cf4d5df3b38.jpg?crop=1.00xw:0.335xh;0,0.0727xh&resize=980:*" class="card-img-top" alt="Yuki Tsunoda">
-                <div class="card-body">
-                    <h5 class="card-title">Yuki Tsunoda</h5>
-                    
-                </div>
-            </div>
-        </div>
-        <!-- Columna 2 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/daniel-ricciardo-65cf4d155d7df.jpg?crop=1.00xw:0.335xh;0,0.0647xh&resize=980:*" class="card-img-top" alt="Daniel Ricciardo">
-                <div class="card-body">
-                    <h5 class="card-title">Daniel Ricciardo</h5>
-                    
-                </div>
-            </div>
-        </div>
-        <!-- Columna 3 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/mercedes-w14-02-1676455886.jpg?crop=1.00xw:0.334xh;0,0.157xh&resize=980:*" class="card-img-top" alt="Lewis Hamilton">
-                <div class="card-body">
-                    <h5 class="card-title">Lewis Hamilton</h5>
-                    
-                </div>
-            </div>
-        </div>
-        <!-- Columna 4 -->
-        <div class="col-md-3">
-            <div class="card mb-3">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/mercedes-w14-07-1676455887.jpg?crop=1.00xw:0.334xh;0,0.101xh&resize=980:*" class="card-img-top" alt="George Russell">
-                <div class="card-body">
-                    <h5 class="card-title">George Russell</h5>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Fin de la tercera fila -->
-    
-</div>
+    try {
+      // Obtener datos de la tabla 'pilotos' en Supabase
+      const { data: pilotos, error } = await supabase.from('pilotos').select('*');
+      if (error) {
+        throw new Error(error.message);
+      }
 
-    `,
-    script: ()=>{
-        console.log('vista pilotos cargada de locos');
-        
+      // Crear las cartas de los pilotos
+      pilotos.forEach(piloto => {
+        const pilotoCard = document.createElement('div');
+        pilotoCard.className = 'col-md-3';
+        pilotoCard.innerHTML = `
+          <div class="card mb-3" data-id="${piloto.id}">
+            <img src="${piloto.foto}" class="card-img-top" alt="${piloto.nombre} ${piloto.apellido}">
+            <div class="card-body">
+              <h5 class="card-title">${piloto.nombre} ${piloto.apellido}</h5>
+            </div>
+          </div>
+        `;
+        pilotosContainer.appendChild(pilotoCard);
+
+        // Añadir evento de clic para mostrar información adicional
+        pilotoCard.addEventListener('click', () => {
+          document.getElementById('pilotoModalImg').src = piloto.foto;
+          document.getElementById('pilotoModalNombre').textContent = piloto.nombre;
+          document.getElementById('pilotoModalApellidos').textContent = piloto.apellido;
+          document.getElementById('pilotoModalEscuderia').textContent = piloto.escuderia;
+          document.getElementById('pilotoModalPuntos').textContent = piloto.puntos;
+          document.getElementById('pilotoModalInformacion').textContent = piloto.informacion;
+          
+          // Mostrar el modal
+          const pilotoModal = new bootstrap.Modal(document.getElementById('pilotoModal'));
+          pilotoModal.show();
+        });
+      });
+    } catch (error) {
+      console.error('Error cargando pilotos:', error);
+      pilotosContainer.innerHTML = '<p class="text-danger">Error cargando pilotos</p>';
     }
-
-}
+  },
+};

@@ -8,15 +8,15 @@ document.querySelector('footer').innerHTML = footer.template;
 
 async function cargarVistaInicial() {
     try {
-        const componente = await import('./vistas/home.js');
-        const vista = componente.default;
-        document.querySelector('main').innerHTML = vista.template;
-        vista.script();
+        // Inicializamos el enrutador para manejar la ruta actual o la ruta por defecto
+        await enrutador.router();
     } catch (error) {
         console.error('Error cargando la vista inicial:', error);
     }
 }
 
-cargarVistaInicial();
-enrutador.observadorRutas();
-window.location = '#/home';
+// Cargar la vista inicial y observar cambios en las rutas
+document.addEventListener('DOMContentLoaded', () => {
+    cargarVistaInicial();
+    enrutador.observadorRutas();
+});
