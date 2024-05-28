@@ -51,6 +51,7 @@ export default {
       const supabase = createClient(supabaseUrl, supabaseKey);
 
       let pilotos = [];
+      let userEmail = null;
 
       // Función para verificar el correo del usuario
       const verificarCorreoUsuario = async () => {
@@ -61,9 +62,9 @@ export default {
           return;
         }
 
-        const userEmail = session.user.email;
+        userEmail = session.user.email;
 
-        if (userEmail === 'nicolas.bamu03@gmail.com') {
+        if (userEmail) {
           mostrarVistaAdmin();
           leerPilotos();
         } else {
@@ -130,10 +131,14 @@ export default {
 
         // Añadir evento de clic a los botones de editar
         document.querySelectorAll('.btn-edit').forEach(button => {
-          button.addEventListener('click', (event) => {
-            const pilotoId = event.target.getAttribute('data-id');
-            mostrarFormularioEdicion(pilotoId);
-          });
+          if (userEmail !== 'nicolas.bamu03@gmail.com') {
+            button.disabled = true; // Desactivar botón para usuarios no autorizados
+          } else {
+            button.addEventListener('click', (event) => {
+              const pilotoId = event.target.getAttribute('data-id');
+              mostrarFormularioEdicion(pilotoId);
+            });
+          }
         });
       };
 
@@ -154,6 +159,8 @@ export default {
             if (modal) {
               modal.hide();
             }
+            // Refrescar la página después de actualizar
+            window.location.reload();
           };
         }
       };
