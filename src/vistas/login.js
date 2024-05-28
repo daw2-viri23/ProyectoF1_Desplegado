@@ -70,17 +70,31 @@ export default {
             email: email.value,
             password: password.value
           });
+
           if (error) throw error;
+
           console.log('User logged in:', data);
+
+          // Obtener los datos del perfil del usuario
+          const { data: perfil, error: perfilError } = await supabase
+            .from('perfiles')
+            .select('*')
+            .eq('user_id', data.user.id)
+            .single();
+
+          if (perfilError) throw perfilError;
+
+          // Actualizar el header
+          header.updateHeader(data.session);
+
+          // Redirigir a la vista home
+          window.location.hash = '#/home';
+
+          // Limpiar el formulario
           form.reset();
           email.classList.remove('is-valid');
           password.classList.remove('is-valid');
           loginError.textContent = '';
-
-          // Actualizar el header
-          header.updateHeader(data.session);
-          // Redirigir a la vista home
-          window.location.hash = '#/home';
         } catch (error) {
           console.error('Error logging in:', error.message);
           loginError.textContent = 'Error al iniciar sesión: ' + error.message;

@@ -40,13 +40,26 @@ export const header = {
   script: async () => {
     console.log('Vista de header cargada con éxito');
     const { data: { session } } = await supabase.auth.getSession();
-    header.updateHeader(session);
+    if (session) {
+      const { data: perfil, error } = await supabase
+        .from('perfiles')
+        .select('rol')
+        .eq('user_id', session.user.id)
+        .single();
+      if (error) {
+        console.error('Error fetching profile:', error);
+      } else {
+        header.updateHeader(session, perfil.rol);
+      }
+    } else {
+      header.updateHeader(null);
+    }
     enrutador.observadorRutas(); // Activa el observador de rutas
   },
-  updateHeader: (session) => {
+  updateHeader: (session, role) => {
     const authButtons = document.getElementById('authButtons');
     if (session) {
-      authButtons.innerHTML = `
+      let userOptions = `
         <li class="nav-item">
           <span class="navbar-text text-white me-2">Hola, ${session.user.email}</span>
         </li>
@@ -57,6 +70,16 @@ export const header = {
           </button>
         </li>
       `;
+
+      if (role === 'admin') {
+        userOptions += `
+          <li class="nav-item">
+            <a class="nav-link router-link" href="#/vista-usuarios">Vista Usuarios</a>
+          </li>
+        `;
+      }
+
+      authButtons.innerHTML = userOptions;
 
       document.getElementById('logoutBtn').addEventListener('click', async () => {
         await supabase.auth.signOut();
