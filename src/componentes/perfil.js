@@ -89,4 +89,17 @@ export class Perfil {
 
     return true;
   }
+
+  static async remove(id) {
+    const { error } = await supabase
+      .from('perfiles')
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      throw new Error(`Error eliminando perfil: ${error.message}`);
+    }
+
+    return true;
+  }
 }

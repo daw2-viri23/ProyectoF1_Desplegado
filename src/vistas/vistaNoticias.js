@@ -49,6 +49,7 @@ export default {
         </form>
       </div>
     </div>
+    <br>
 
     <style scoped>
       .card-img-top {
