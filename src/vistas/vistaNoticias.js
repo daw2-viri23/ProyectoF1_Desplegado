@@ -130,6 +130,7 @@ export default {
           <img src="https://i.pinimg.com/236x/26/ea/c2/26eac292ab22e4033750890f10b4de48.jpg" alt="Inicia sesión">
         </div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
       `;
       return;
     }
@@ -219,6 +220,7 @@ export default {
                 <p class="card-text">${new Date(noticia.fecha).toLocaleDateString()}</p>
                 <p class="card-text">${noticia.informacion.substring(0, 100)}...</p>
                 <button class="btn btn-primary btn-leer-mas" data-id="${noticia.id}">Leer más</button>
+                ${isAdmin ? `<button class="btn btn-danger btn-borrar-noticia" data-id="${noticia.id}">Borrar</button>` : ''}
               </div>
             </div>
           </div>
@@ -241,6 +243,39 @@ export default {
             }
           });
         });
+
+        if (isAdmin) {
+          document.querySelectorAll('.btn-borrar-noticia').forEach(button => {
+            button.addEventListener('click', async (event) => {
+              const noticiaId = event.target.getAttribute('data-id');
+              try {
+                const { error } = await supabase
+                  .from('noticias')
+                  .delete()
+                  .eq('id', noticiaId);
+
+                if (error) throw error;
+
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Noticia borrada',
+                  text: 'La noticia ha sido borrada correctamente.',
+                  timer: 2000,
+                  showConfirmButton: false
+                });
+
+                leerNoticias(); // Recargar las noticias
+              } catch (error) {
+                console.error('Error borrando noticia:', error);
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Error',
+                  text: 'Hubo un problema borrando la noticia.',
+                });
+              }
+            });
+          });
+        }
       } catch (error) {
         console.error('Error cargando noticias:', error);
       }
