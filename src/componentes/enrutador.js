@@ -11,7 +11,8 @@ export const enrutador = {
     circuitos: () => import('../vistas/circuitos.js'),
     clasificacion: () => import('../vistas/clasificacion.js'),
     'vista-usuarios': () => import('../vistas/vistaUsuarios.js'),
-    'editar-piloto': () => import('../vistas/editarPiloto.js') // Nueva ruta agregada
+    'editar-piloto': () => import('../vistas/editarPiloto.js'),
+    noticias: () => import('../vistas/vistaNoticias.js') // Nueva ruta agregada
   },
   
   router: async () => {

@@ -2,9 +2,56 @@ import { supabase } from '../componentes/supabase';
 
 export default {
   template: `
-    <div class="container mt-5">
+  <style>
+    .editar-piloto-container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .editar-piloto-form .form-label {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .editar-piloto-form .form-control {
+      border-radius: 5px;
+      border: 1px solid #ced4da;
+      padding: 10px;
+    }
+
+    .editar-piloto-form .btn-primary {
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .editar-piloto-form .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    .editar-piloto-form .mt-5 {
+      margin-top: 3rem !important;
+    }
+
+    .editar-piloto-form .mt-4 {
+      margin-top: 1.5rem !important;
+    }
+
+    .editar-piloto-form .mb-3 {
+      margin-bottom: 1rem !important;
+    }
+  </style>
+  <br>
+  <br>
+    <div class="editar-piloto-container mt-5">
       <h2>Editar Puntos del Piloto</h2>
-      <form id="editarPilotoForm" class="mt-4">
+      <form id="editarPilotoForm" class="editar-piloto-form mt-4">
         <div class="mb-3">
           <label for="nombre" class="form-label">Nombre</label>
           <input type="text" id="nombre" class="form-control" disabled>
@@ -24,6 +71,19 @@ export default {
         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
       </form>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+   
+    
+
   `,
   script: async (id) => {
     console.log('ID del piloto a editar:', id);

@@ -29,6 +29,9 @@ export const header = {
             <li class="nav-item">
               <a class="nav-link router-link" aria-current="page" href="#/clasificacion">Clasificacion</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link router-link" aria-current="page" href="#/noticias">Noticias</a>
+            </li>
           </ul>
           <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0" id="authButtons">
             <!-- Botones de autenticación se renderizarán aquí -->

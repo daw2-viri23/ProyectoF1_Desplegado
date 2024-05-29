@@ -87,8 +87,8 @@ export default {
           // Actualizar el header
           header.updateHeader(data.session);
 
-          // Redirigir a la vista home
-          window.location.hash = '#/home';
+          // Redirigir a la página principal y recargar
+          window.location.href = '/'; // Asegúrate de que '/' es la URL de la página principal
 
           // Limpiar el formulario
           form.reset();
